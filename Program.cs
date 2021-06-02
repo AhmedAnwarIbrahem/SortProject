@@ -7,10 +7,11 @@ namespace SortProject
     class SortingProgram
     {
         //using selection sort algorithm
+        //Put Values in the debug menu like
+        //50 70 50 80 89 25 78 58 83 73
         public static void Main(string[] args)
         {
-            //int[] args = { 50,70,50,80,89,25,78,58,83,73 };
-            var inputsArray = args.Select(int.Parse).ToList();
+            var inputsArray = args != null && args.Length != 0 ? args.Select(int.Parse).ToList() : new List<int> { 50, 70, 50, 80, 89, 25, 78, 58, 83, 73 };
             var combinedInputs = string.Join(", ", inputsArray);
             Console.WriteLine($"Main array: \n {combinedInputs} \n");
             Sort(inputsArray);
